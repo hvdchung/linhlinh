@@ -492,4 +492,7 @@ body.active .text h1{
 	body:not(.active) .velas {
 		top: 140px;
 	}
+	.title_countdown {
+		font-size: 1.2rem;
+	}
 }

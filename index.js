@@ -452,7 +452,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateCountdown() {
     const birthday = new Date();
     birthday.setMonth(5); // June
-    birthday.setDate(13);
+    birthday.setDate(16);
     birthday.setHours(0, 0, 0, 0);
 
     const now = new Date();
@@ -478,7 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const now = new Date();
     const birthday = new Date();
     birthday.setMonth(5); // June
-    birthday.setDate(13);
+    birthday.setDate(16);
     birthday.setHours(0, 0, 0, 0);
     console.log(birthday.getDate());
     if (
