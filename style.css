@@ -214,7 +214,7 @@ body {
 	font-weight: 400;
 	letter-spacing: 0.2em;
 	line-height: 1;
-	margin: 0 0 1.5em;
+	margin: 0;
 	padding: 0;
 	font-size: 1.3rem;
 	position: relative;
@@ -481,4 +481,15 @@ body.active #c
 }
 body.active .text h1{
 	display: block !important;
+}
+@media (max-width: 767px) {
+	body:not(.active) .text .heart svg {
+		max-width: 122px;
+	}
+	body:not(.active) #cake {
+		max-height: 400px;
+	}
+	body:not(.active) .velas {
+		top: 140px;
+	}
 }
