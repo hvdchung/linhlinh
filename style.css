@@ -1,0 +1,484 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: unset;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+	background-size: 400% 400%;
+	overflow: unset;
+	animation: bgGradient 15s ease infinite;
+}
+
+@keyframes bgGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+#countdown {
+	/* position: absolute;
+	top: 20px;
+	left: 20px; */
+	font: 20px Verdana;
+	color: #fff;
+	text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+	z-index: 2;
+}
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic);
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: #ee9ca7;
+}
+
+#cake {
+	display: block;
+	position: relative;
+	margin: -10em auto 0 auto;
+}
+
+/* ============================================== Candle
+*/
+
+.velas {
+	background: #fefaf2;
+	border-radius: 10px;
+	position: absolute;
+	top: 228px;
+	left: 50%;
+	margin-left: -2.4px;
+	margin-top: -8.33333333px;
+	width: 5px;
+	height: 35px;
+	transform: translateY(-300px);
+	backface-visibility: hidden;
+	animation: in 500ms 6s ease-out forwards;
+}
+.velas:after,
+.velas:before {
+	background: rgba(255, 0, 0, 0.4);
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2.22222222px;
+}
+.velas:after {
+	top: 25%;
+	left: 0;
+}
+.velas:before {
+	top: 45%;
+	left: 0;
+}
+
+/* ============================================== Fire
+*/
+
+.fuego {
+	border-radius: 100%;
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	margin-left: -2.6px;
+	width: 6.66666667px;
+	height: 18px;
+}
+.fuego:nth-child(1) {
+	animation: fuego 2s 6.5s infinite;
+}
+.fuego:nth-child(2) {
+	animation: fuego 1.5s 6.5s infinite;
+}
+.fuego:nth-child(3) {
+	animation: fuego 1s 6.5s infinite;
+}
+.fuego:nth-child(4) {
+	animation: fuego 0.5s 6.5s infinite;
+}
+.fuego:nth-child(5) {
+	animation: fuego 0.2s 6.5s infinite;
+}
+
+/* ============================================== Animation Fire
+*/
+
+@keyframes fuego {
+	0%,
+	100% {
+		background: rgba(254, 248, 97, 0.5);
+		box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+		transform: translateY(0) scale(1);
+	}
+	50% {
+		background: rgba(255, 50, 0, 0.1);
+		box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+		transform: translateY(-20px) scale(0);
+	}
+}
+
+@keyframes in {
+	to {
+		transform: translateY(0);
+	}
+}
+
+.text {
+	color: #958f8f;
+	font-family: "Lato", sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	text-align: center;
+}
+.text h1 {
+	font-size: 2.5em;
+    margin-top: 0;
+    font-weight: 900;
+    font-style: italic;
+    text-align: center;
+    color: #fefaf2;
+    letter-spacing: 0.1em;
+	text-transform: capitalize;
+}
+.text p {
+	font-size: 2.5em;
+	margin-top: 0;
+	font-weight: 900;
+	font-style: italic;
+	text-align: center;
+	color: #fefaf2;
+	letter-spacing: 0.1em;
+}
+.text .heart svg {
+	max-width: 220px;
+	margin: auto;
+	display: block;
+}
+.text .heart svg * {
+	transform-box: fill-box;
+}
+.text .heart svg .line {
+	fill: none;
+	stroke: #a08970;
+	stroke-miterlimit: 10;
+	stroke-width: 2px;
+	stroke-dasharray: 1920;
+	stroke-dashoffset: 1920;
+	animation: 3s line-draw cubic-bezier(0.5, 0.3, 0.5, 1) forwards;
+}
+
+.text .heart svg .hearts {
+	fill: #ff00d9;
+	stroke-width: 0;
+	opacity: 0;
+	scale: 0.5;
+	transform-origin: 50% 50%;
+}
+.text .heart svg .hearts.heart--is-large {
+	transform-origin: 25% 100%;
+	animation: 1s heart-grow 1.33s cubic-bezier(0.5, 0.3, 0.1, 1) forwards;
+}
+.text .heart svg .hearts.heart--is-small {
+	transform-origin: 4% 100%;
+	animation: 0.75s heart-grow 1.66s cubic-bezier(0.3, 0.3, 0.2, 1) forwards;
+}
+
+.title_countdown {
+	font-size: 1rem;
+	font-family: "Lato", sans-serif;
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 0.2em;
+	line-height: 1;
+	margin: 0 0 1.5em;
+	padding: 0;
+	font-size: 1.3rem;
+	position: relative;
+	text-align: center;
+	color: #fefaf2;
+	/* &:before,
+	&:after {
+		content: " ***** ";
+		font-size: 1rem;
+		letter-spacing: 0.25em;
+		color: #9c0183;
+	} */
+}
+#countdown {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	align-items: center;
+	font-family: "Segoe UI", sans-serif;
+	margin-top: 20px;
+}
+
+.count-box {
+	background: rgba(255, 255, 255, 0.1);
+	border: 2px solid #ffffff33;
+	border-radius: 12px;
+	padding: 10px 14px;
+	text-align: center;
+	color: white;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+	transition: transform 0.3s ease;
+}
+
+.count-box:hover {
+	transform: scale(1.1);
+}
+
+.count-num {
+	font-size: 2rem;
+	font-weight: bold;
+	display: block;
+}
+
+.count-label {
+	font-size: 0.9rem;
+	opacity: 0.8;
+}
+.fireworks {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 0.5vmin;
+	height: 0.5vmin;
+	transform: translate(-50%, -50%);
+	animation: firework 2s ease-out infinite;
+}
+.fireworks {
+	background:
+		radial-gradient(circle, #ff9a9e 0.5vmin, transparent 1px) 50% 0%,
+		radial-gradient(circle, #fad0c4 1vmin, transparent 1px) 20% 20%,
+		radial-gradient(circle, #fbc2eb 0.8vmin, transparent 1px) 80% 30%;
+	background-size:
+		0.5vmin 0.5vmin,
+		1vmin 1vmin,
+		0.8vmin 0.8vmin;
+	background-repeat: no-repeat;
+}
+
+@keyframes firework {
+	0% {
+		transform: translate(-50%, 60vh) scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: translate(-50%, -10vh) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(-50%, -10vh) scale(45);
+		opacity: 0;
+	}
+}
+
+.fireworks::before,
+.fireworks::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	background: inherit;
+	background-size: inherit;
+	background-repeat: inherit;
+}
+
+.fireworks::before {
+	animation: firework 2s ease-out infinite;
+}
+.fireworks::after {
+	animation: firework 2s ease-out infinite;
+}
+@keyframes line-draw {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes heart-grow {
+	100% {
+		opacity: 0.5;
+		scale: 1;
+	}
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+/* START snowfall */
+.winter-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.snowflake {
+	position: absolute;
+	top: -2vh;
+	font-size: 2rem;
+	animation: fall linear infinite;
+	opacity: 0.8;
+	z-index: 5;
+	font-size: 10px;
+	width: 8px;
+	height: 8px;
+	border-radius: 100%;
+	background-color: #fff;
+}
+
+.snowflake._md {
+	width: 3px;
+	height: 3px;
+}
+
+.snowflake._lg {
+	width: 5px;
+	height: 5px;
+}
+
+@keyframes flickr {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.2;
+	}
+}
+
+@keyframes fall {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(20vw, 110vh);
+	}
+}
+
+/* Ground layer */
+.ground {
+	border-top-right-radius: 71vw 40px;
+	position: absolute;
+	width: 73vw;
+	height: 61px;
+	left: 0;
+	bottom: 0;
+	background: white;
+}
+
+.ground::before {
+	border-radius: 50%;
+	content: " ";
+	position: absolute;
+	width: 71vw;
+	height: 100px;
+	top: 10px;
+	right: -33vw;
+	background: white;
+}
+
+.ground::after {
+	border-radius: 50%;
+	content: " ";
+	position: absolute;
+	width: 38vw;
+	height: 70px;
+	top: 5px;
+	right: -41vw;
+	background: white;
+}
+/* END snowfall */
+
+/* START candy */
+.candy {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: #add8e6;
+	border-radius: 50%;
+	pointer-events: none;
+	animation: explode 1.25s ease-out forwards;
+}
+
+@keyframes explode {
+	0% {
+		transform: scale(0.5) translate(0, 0);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0.2) translate(var(--x), var(--y));
+		opacity: 0;
+	}
+}
+/* END candy */
+#snow-container {
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	overflow: hidden;
+}
+
+.snowflake {
+	position: absolute;
+	top: -10px;
+	background: white;
+	border-radius: 50%;
+	opacity: 0.8;
+	width: 8px;
+	height: 8px;
+	animation-name: snowfall;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes snowfall {
+	0% {
+		transform: translateY(0) translateX(0);
+	}
+	100% {
+		transform: translateY(100vh) translateX(var(--x-drift, 0px));
+	}
+}
+
+body.active #countdown ,
+body.active .title_countdown,
+body.active #c
+{
+	display: none;
+}
+body.active .text h1{
+	display: block !important;
+}
